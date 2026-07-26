@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>burgersmoke studios</title>
+<meta name="description" content="TTRPG zines and original soundtracks from burgersmoke studios — Doomsmoker, burgersmoke, and below the smoke.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="burgersmoke studios">
+<meta property="og:description" content="TTRPG zines and original soundtracks from burgersmoke studios — Doomsmoker, burgersmoke, and below the smoke.">
+<meta property="og:image" content="https://burgersmoke.github.io/assets/burgersmoke-banner.jpg">
+<meta property="og:url" content="https://burgersmoke.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="burgersmoke studios">
+<meta name="twitter:description" content="TTRPG zines and original soundtracks from burgersmoke studios — Doomsmoker, burgersmoke, and below the smoke.">
+<meta name="twitter:image" content="https://burgersmoke.github.io/assets/burgersmoke-banner.jpg">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -17,6 +27,10 @@
 
   * { box-sizing: border-box; }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
@@ -25,13 +39,17 @@
     font-family: var(--font-body);
   }
 
-  body {
-    padding: clamp(28px, 6vw, 64px) clamp(20px, 8vw, 96px) 96px;
-  }
-
   .page {
     max-width: 720px;
     margin: 0 auto;
+    padding: 0 clamp(20px, 8vw, 96px) 96px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
   }
 
   /* ---------- Header ---------- */
@@ -40,6 +58,8 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
     margin-bottom: clamp(32px, 6vw, 56px);
   }
 
@@ -63,6 +83,18 @@
     font-family: var(--font-mono);
     font-size: 13px;
     color: var(--muted);
+    display: flex;
+    gap: 18px;
+  }
+
+  .nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--accent);
   }
 
   /* ---------- Links (global) ---------- */
@@ -109,17 +141,19 @@
   /* ---------- Banner ---------- */
 
   .banner {
-    width: 100%;
-    border-radius: 2px;
-    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     margin-bottom: clamp(48px, 8vw, 80px);
     background: #0a0a0a;
-    border: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
   .banner img {
     width: 100%;
     height: auto;
+    max-height: 340px;
+    object-fit: cover;
     display: block;
   }
 
@@ -275,6 +309,24 @@
     border-style: solid;
   }
 
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card > .link-row,
+  .project-card > a.cli-link {
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
+  .project-card--text-only .cover,
+  .project-card--text-only .cover-pair {
+    aspect-ratio: auto;
+    height: 110px;
+    margin-bottom: 14px;
+  }
+
   h2.card-title {
     font-size: 19px;
     font-weight: 700;
@@ -322,19 +374,23 @@
 </style>
 </head>
 <body>
+  <div class="banner">
+    <img src="assets/burgersmoke-banner.jpg" alt="burgersmoke records — mushroom cloud mark and wordmark">
+  </div>
+
   <div class="page">
 
     <header class="site-header">
       <div class="site-name">burgersmoke studios<span class="cursor">_</span></div>
-      <nav class="site-nav">projects</nav>
+      <nav class="site-nav">
+        <a class="nav-link" href="#doomsmoker">doomsmoker</a>
+        <a class="nav-link" href="#music">music</a>
+        <a class="nav-link" href="#more">writing</a>
+      </nav>
     </header>
 
-    <div class="banner">
-      <img src="assets/burgersmoke-banner.jpg" alt="burgersmoke records — mushroom cloud mark and wordmark">
-    </div>
-
     <!-- FEATURED PROJECT -->
-    <section class="featured">
+    <section class="featured" id="doomsmoker">
       <p class="eyebrow"><span class="accent">&gt;</span> featured</p>
       <div class="cover"><img src="assets/doomsmoker-zine-tape.jpg" alt="Doomsmoker zine and cassette tape"></div>
       <h1 class="project-title">Doomsmoker</h1>
@@ -357,6 +413,7 @@
     <hr class="divider">
 
     <!-- TWO-COLUMN PROJECTS -->
+    <p class="eyebrow" id="music"><span class="accent">&gt;</span> music</p>
     <section class="project-grid">
 
       <div class="project-card">
@@ -378,6 +435,7 @@
     <hr class="divider">
 
     <!-- ADDITIONAL PROJECTS (no cover art) -->
+    <p class="eyebrow" id="more"><span class="accent">&gt;</span> more</p>
     <section class="project-grid project-grid--light">
 
       <div class="project-card project-card--text-only">

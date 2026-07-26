@@ -110,31 +110,16 @@
 
   .banner {
     width: 100%;
-    aspect-ratio: 4 / 1;
     border-radius: 2px;
     overflow: hidden;
     margin-bottom: clamp(48px, 8vw, 80px);
     background: #0a0a0a;
-    border: 1px dashed var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-align: center;
-    padding: 16px;
-  }
-
-  .banner:has(img) {
-    border-style: solid;
+    border: 1px solid var(--line);
   }
 
   .banner img {
-    height: 78%;
-    width: auto;
-    max-width: 60%;
-    object-fit: contain;
+    width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -208,6 +193,11 @@
     margin-top: 20px;
   }
 
+  .link-row--tight {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
   /* ---------- Divider ---------- */
 
   .divider {
@@ -230,9 +220,37 @@
     }
   }
 
+  .project-card--text-only .card-title {
+    font-size: 16px;
+  }
+
+  .project-card--text-only p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .cover-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 18px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+
+  .cover-pair img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
   .project-card .cover {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     background: #111;
     border: 1px dashed var(--line);
     border-radius: 2px;
@@ -249,7 +267,7 @@
   .project-card .cover img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
   }
 
@@ -312,7 +330,7 @@
     </header>
 
     <div class="banner">
-      <img src="assets/burgersmoke-logo.jpg" alt="burgersmoke records logo — mushroom cloud mark">
+      <img src="assets/burgersmoke-banner.jpg" alt="burgersmoke records — mushroom cloud mark and wordmark">
     </div>
 
     <!-- FEATURED PROJECT -->
@@ -353,6 +371,36 @@
         <h2 class="card-title">below the smoke</h2>
         <p>Side project of two good friends, burgersmoke and belowthesalt. Most recent release is SUPER RETROID 2049: DNA Resequenced, a love letter to Metroid and the music of the game — the deluxe reissue includes Side A, the original album, and Side B, remixes and reimaginings from other artists.</p>
         <a class="cli-link" href="https://belowthesmoke.bandcamp.com/">bandcamp</a>
+      </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- ADDITIONAL PROJECTS (no cover art) -->
+    <section class="project-grid project-grid--light">
+
+      <div class="project-card project-card--text-only">
+        <div class="cover"><img src="assets/itch-drivethrurpg.jpg" alt="burgersmoke TTRPG releases artwork"></div>
+        <h2 class="card-title">TTRPG releases from burgersmoke</h2>
+        <p>Besides Doomsmoker, burgersmoke has released other writings, assets, and more on itch.io and DriveThruRPG.</p>
+        <div class="link-row link-row--tight">
+          <a class="cli-link" href="https://burgersmoke.itch.io/">itch.io</a>
+          <a class="cli-link" href="https://www.drivethrurpg.com/en/publisher/34403/burgersmoke-studios">DriveThruRPG</a>
+        </div>
+      </div>
+
+      <div class="project-card project-card--text-only">
+        <div class="cover-pair">
+          <img src="assets/beneath-the-wasatch-peaks.jpg" alt="Beneath the Wasatch Peaks album art">
+          <img src="assets/dream-variations-vol-2.jpg" alt="Dream Variations Vol. 2 album art">
+        </div>
+        <h2 class="card-title">Other compilations</h2>
+        <p>Check out other music compilations for which burgersmoke has contributed tracks.</p>
+        <div class="link-row link-row--tight">
+          <a class="cli-link" href="https://slcsynthalliance.bandcamp.com/album/beneath-the-wasatch-peaks">Beneath the Wasatch Peaks</a>
+          <a class="cli-link" href="https://slcsynthalliance.bandcamp.com/album/dream-variations-vol-2">Dream Variations Vol. 2</a>
+        </div>
       </div>
 
     </section>
